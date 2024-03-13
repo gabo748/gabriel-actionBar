@@ -1,20 +1,18 @@
 package sv.fis.amb.camposlopez
 
-import android.annotation.SuppressLint
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 
-class MainActivity : AppCompatActivity() {
-    @SuppressLint("MissingInflatedId")
+class SegundaPantalla : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
+
+
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_segunda_pantalla)
 
         var toolbar = findViewById<Toolbar>(R.id.toolbal)
         setSupportActionBar(toolbar)
@@ -23,13 +21,12 @@ class MainActivity : AppCompatActivity() {
         supportActionBar?.subtitle = "Universidad Francisco Gavidia"
         supportActionBar?.setIcon(R.drawable.ic_launcher_foreground)
 
-        val boton = findViewById<Button>(R.id.newBtn)
 
-        boton.setOnClickListener {
-            val intent = Intent(this, SegundaPantalla::class.java)
-            startActivity(intent)
-        }
+    }
 
+    override fun onSupportNavigateUp(): Boolean {
+        finish()
+        return true
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {
